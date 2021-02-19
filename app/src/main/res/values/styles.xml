@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Widget.Theme.Calc4Kids.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="Widget.Theme.Calc4Kids.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+    <style name="ClickableButton" parent="ThemeOverlay.AppCompat">
+        <item name="android:textColor">#6200EA</item>
+        <item name="android:colorAccent" tools:targetApi="lollipop">#FF6D00</item>
+    </style>
+
+
+
+</resources>

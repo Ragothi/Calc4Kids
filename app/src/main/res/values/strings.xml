@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Calc4Kids</string>
+    <string name="multiplication">MULTIPLICATION</string>
+    <string name="addition">ADDITION</string>
+    <string name="subtraction">SUBTRACTION</string>
+    <string name="division">DIVISION</string>
+    <string name="next">NEXT</string>
+    <string name="settings">SETTINGS</string>
+    <string name="selectDifficulty">Select Difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="advanced">Advanced</string>
+    <string name="hard">Hard</string>
+    <string name="instruction">
+        Easy: numbers up to 100
+        \nAdvanced: numbers up to 225
+        \nHard: numbers up to 999
+    </string>
+
+</resources>

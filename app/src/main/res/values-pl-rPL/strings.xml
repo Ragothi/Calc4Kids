@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calc4Kids</string>
+    <string name="addition">DODAWANIE</string>
+    <string name="multiplication">MNOŻENIE</string>
+    <string name="subtraction">ODEJMOWANIE</string>
+    <string name="next">NASTĘPNE</string>
+    <string name="division">DZIELENIE</string>
+    <string name="settings">USTAWIENIA</string>
+    <string name="selectDifficulty">Wybierz poziom trudności</string>
+    <string name="easy">Łatwy</string>
+    <string name="advanced">Średni</string>
+    <string name="hard">Trudny</string>
+    <string name="instruction">
+        Łatwy: Liczby do 100
+        \nŚredni: Liczby do 225
+        \nTrudny: Liczby do 999</string>
+</resources>
