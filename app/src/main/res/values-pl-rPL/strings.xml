@@ -15,4 +15,7 @@
         Łatwy: Liczby do 100
         \nŚredni: Liczby do 225
         \nTrudny: Liczby do 999</string>
+    <string name="voiceActivity">Słuchaj</string>
+    <string name="description1">Pochwała lub nagana</string>
+
 </resources>

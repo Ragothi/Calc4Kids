@@ -15,5 +15,7 @@
         \nAdvanced: numbers up to 225
         \nHard: numbers up to 999
     </string>
+    <string name="voiceActivity">Listen</string>
+    <string name="description1">Win or lose</string>
 
 </resources>

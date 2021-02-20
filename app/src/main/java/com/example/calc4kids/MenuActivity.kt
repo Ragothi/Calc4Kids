@@ -14,9 +14,10 @@ class MenuActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        @Suppress("DEPRECATION")
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         setContentView(R.layout.activity_menu)
 
@@ -33,6 +34,7 @@ class MenuActivity : AppCompatActivity(){
         list.add(division)
 
         val settings: Button = findViewById(R.id.settings)
+        val voice: Button = findViewById(R.id.voice)
 
         for (but in list){
             but.setOnClickListener {
@@ -47,7 +49,9 @@ class MenuActivity : AppCompatActivity(){
             }
         }
 
-
+        voice.setOnClickListener {
+            startActivity(Intent(this,VoiceActivity::class.java))
+        }
 
         settings.setOnClickListener {
             startActivity(Intent(this,SettingsActivity::class.java))

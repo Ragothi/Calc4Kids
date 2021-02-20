@@ -1,5 +1,6 @@
 package com.example.calc4kids
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
@@ -23,6 +24,7 @@ class CountingActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
+        @Suppress("DEPRECATION")
         getWindow().setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -44,14 +46,12 @@ class CountingActivity: AppCompatActivity() {
             Difficulty.HARD ->  999
         }
 
-        val generatedContainer: ConstraintLayout = findViewById(R.id.generatedContainer)
-
         var first = -1
         var second = -1
         var answer = -1
-        var wrong1 = -1
-        var wrong2 = -1
-        var correctButton = -1
+        var wrong1: Int
+        var wrong2: Int
+        var correctButton: Int
 
         val left: Button = findViewById(R.id.left)
         val mid: Button = findViewById(R.id.mid)
@@ -87,27 +87,27 @@ class CountingActivity: AppCompatActivity() {
 
 
 
-        fun rollNewDivision(type: CalculationType) {
+        fun rollNewDivision() {
 
             correctButton = Random.nextInt(0, 3)
-            var range = -1;
+            var range = -1
             when (currentActivity){
                 ADDITION -> {
                     first = Random.nextInt(1, max)
                     second = Random.nextInt(1, max)
-                    answer = first+second;
+                    answer = first+second
                     range=15
                 }
                 SUBTRACTION -> {
                     first = Random.nextInt(1, max)
                     second = Random.nextInt(1, first)
-                    answer = first-second;
+                    answer = first-second
                     range=10
                 }
                 MULTIPLICATION -> {
                     first = Random.nextInt(1, Math.sqrt(max.toDouble()).roundToInt())
                     second = Random.nextInt(2, Math.sqrt(max.toDouble()).roundToInt())
-                    answer = first*second;
+                    answer = first*second
                     range=15
                 }
                 DIVISION -> {
@@ -117,7 +117,7 @@ class CountingActivity: AppCompatActivity() {
                     do {
                         second = Random.nextInt(2, Math.sqrt(max.toDouble()).roundToInt() )
                     } while (first%second != 0)
-                    answer = first / second;
+                    answer = first / second
                     range=10
                 }
             }
@@ -128,7 +128,7 @@ class CountingActivity: AppCompatActivity() {
                 wrong2 = Math.abs(Random.nextInt(answer - Random.nextInt(1, range), answer + Random.nextInt(1, range)))
             } while (wrong1 == answer || wrong2 == answer || wrong1 == wrong2 || wrong1==0 || wrong2==0)
 
-            var firstHit = true;
+            var firstHit = true
 
             for (but in list) {
                 if (list[correctButton] == but) {
@@ -146,36 +146,16 @@ class CountingActivity: AppCompatActivity() {
             }
 
         }
-        rollNewDivision(currentActivity)
+
+
+        rollNewDivision()
 
         next.setOnClickListener {
-        rollNewDivision(currentActivity)
+        rollNewDivision()
         reaction.isVisible = false
         next.isVisible = false
         viewButtons(true)
     }
-
-        fun animateAttack(button: ImageView,skillImage: Int){
-            val image: ImageView = ImageView(this)
-            image.setImageResource(skillImage)
-            image.id = View.generateViewId()
-            image.scaleX = 2f
-            image.scaleY = 2f
-
-            generatedContainer.addView(image)
-
-            val cs: ConstraintSet = ConstraintSet();
-            var action: Int = 0
-
-
-            cs.connect(image.id, ConstraintSet.TOP,action, ConstraintSet.TOP,0)
-            cs.connect(image.id, ConstraintSet.BOTTOM,action, ConstraintSet.BOTTOM,0)
-            cs.connect(image.id, ConstraintSet.START,action, ConstraintSet.START,0)
-            cs.connect(image.id, ConstraintSet.END,action, ConstraintSet.END,0)
-            cs.applyTo(generatedContainer)
-
-
-        }
 
 
 }
