@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
+    android:background="@color/light_blue_A200"
     android:theme="@style/ThemeOverlay.Calc4Kids.FullscreenContainer"
     tools:context=".VoiceActivity">
 
@@ -14,6 +14,126 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/nextVoiceBut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/next"
+            android:textColor="@color/purple_500"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:backgroundTint="#FF6D00"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/wonVoice"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:scaleType="fitCenter"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/question"
+            app:srcCompat="@drawable/happy" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rightDownContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="#64DD17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/leftDownContainer"
+            app:layout_constraintTop_toBottomOf="@id/rightUpContainer">
+
+            <Button
+                android:id="@+id/RD"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/purple_500"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:theme="@style/ClickableButton"
+                app:backgroundTint="#00FF6D00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rightUpContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="#64DD17"
+            app:layout_constraintBottom_toTopOf="@id/rightDownContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/leftUpContainer"
+            app:layout_constraintTop_toBottomOf="@id/question">
+
+            <Button
+                android:id="@+id/RU"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/purple_500"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:theme="@style/ClickableButton"
+                app:backgroundTint="#00FF6D00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/leftDownContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="#64DD17"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rightDownContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leftUpContainer">
+
+            <Button
+                android:id="@+id/LD"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/purple_500"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:theme="@style/ClickableButton"
+                app:backgroundTint="#00FF6D00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/question"
@@ -27,95 +147,37 @@
             android:textColor="#6200EA"
             android:textSize="72sp"
             android:textStyle="bold"
-            android:visibility="invisible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/RU"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/purple_500"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:theme="@style/ClickableButton"
-            app:backgroundTint="#FF6D00"
-            app:layout_constraintBottom_toTopOf="@+id/RD"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/LU"
-            app:layout_constraintTop_toBottomOf="@+id/question" />
-
-        <Button
-            android:id="@+id/RD"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="32dp"
-            android:textColor="@color/purple_500"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:theme="@style/ClickableButton"
-            app:backgroundTint="#FF6D00"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/LD"
-            app:layout_constraintTop_toBottomOf="@+id/RU" />
-
-        <Button
-            android:id="@+id/LD"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="32dp"
-            android:textColor="@color/purple_500"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:theme="@style/ClickableButton"
-            app:backgroundTint="#FF6D00"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/RD"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LU" />
-
-        <Button
-            android:id="@+id/LU"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:textColor="@color/purple_500"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:theme="@style/ClickableButton"
-            app:backgroundTint="#FF6D00"
-            app:layout_constraintBottom_toTopOf="@+id/LD"
-            app:layout_constraintEnd_toStartOf="@+id/RU"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/question"
-            app:layout_constraintVertical_bias="0.0" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/generatedContainer"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/leftUpContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="#64DD17"
-            app:layout_constraintBottom_toBottomOf="@+id/LU"
-            app:layout_constraintEnd_toEndOf="@+id/LU"
-            app:layout_constraintStart_toStartOf="@+id/LU"
-            app:layout_constraintTop_toTopOf="@+id/question"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintBottom_toTopOf="@+id/leftDownContainer"
+            app:layout_constraintEnd_toStartOf="@id/rightUpContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/question">
 
+            <Button
+                android:id="@+id/LU"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textColor="@color/purple_500"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:theme="@style/ClickableButton"
+                app:backgroundTint="#00FF6D00"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

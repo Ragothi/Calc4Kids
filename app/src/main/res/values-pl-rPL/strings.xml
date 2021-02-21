@@ -17,5 +17,6 @@
         \nTrudny: Liczby do 999</string>
     <string name="voiceActivity">Słuchaj</string>
     <string name="description1">Pochwała lub nagana</string>
-
+    <string name="icons">Obrazki</string>
+    <string name="numbers">Liczby</string>
 </resources>

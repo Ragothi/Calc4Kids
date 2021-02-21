@@ -6,6 +6,7 @@ object MyVariables {
 
     var currentDifficulty: Difficulty = Difficulty.EASY
     var currentActivity: CalculationType = CalculationType.ADDITION
+    var currentDisplayType: DisplayType = DisplayType.ICONS
 
     enum class Difficulty{
         EASY,MID,HARD
@@ -15,12 +16,18 @@ object MyVariables {
         ADDITION,SUBTRACTION,MULTIPLICATION,DIVISION
     }
 
+    enum class DisplayType{
+        NUMBERS,ICONS
+    }
+
+
 
     fun saveGame(pref: SharedPreferences?){
         val editor =pref?.edit()
 
         editor?.putInt("currentDifficulty",1)
         editor?.putInt("currentActivity",1)
+        editor?.putInt("currentDisplayType",1)
 
         editor?.apply()
     }
@@ -39,6 +46,12 @@ object MyVariables {
             3 -> CalculationType.MULTIPLICATION
             4 -> CalculationType.DIVISION
             else -> CalculationType.ADDITION
+        }
+
+        currentDisplayType = when (pref?.getInt("currentDisplayType",1)){
+            1 -> DisplayType.ICONS
+            2 -> DisplayType.NUMBERS
+            else -> DisplayType.ICONS
         }
 
     }

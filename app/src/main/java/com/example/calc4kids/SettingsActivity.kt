@@ -29,6 +29,9 @@ class SettingsActivity : AppCompatActivity(){
         val easy: Button = findViewById(R.id.easy)
         val mid: Button = findViewById(R.id.advanced)
         val hard: Button = findViewById(R.id.hard)
+        val numbers: Button = findViewById(R.id.numbers)
+        val icons: Button = findViewById(R.id.icons)
+
         val list: ArrayList<Button> = ArrayList()
         list.add(easy)
         list.add(mid)
@@ -52,10 +55,25 @@ class SettingsActivity : AppCompatActivity(){
             }
         }
 
+        fun colorButton2(red: Button){
+            if (red.equals(numbers)){
+                setTint(numbers.background,Color.RED)
+                setTint(icons.background,Color.parseColor("#FF6D00"))
+            } else {
+                setTint(icons.background,Color.RED)
+                setTint(numbers.background,Color.parseColor("#FF6D00"))
+            }
+        }
+
         when (MyVariables.currentDifficulty){
             MyVariables.Difficulty.EASY ->  setTint(easy.background,Color.RED)
             MyVariables.Difficulty.MID -> setTint(mid.background,Color.RED)
             MyVariables.Difficulty.HARD ->  setTint(hard.background,Color.RED)
+        }
+
+        when (MyVariables.currentDisplayType){
+            MyVariables.DisplayType.ICONS ->  setTint(icons.background,Color.RED)
+            MyVariables.DisplayType.NUMBERS -> setTint(numbers.background,Color.RED)
         }
 
         easy.setOnClickListener {
@@ -73,7 +91,15 @@ class SettingsActivity : AppCompatActivity(){
             colorButton(hard)
         }
 
+        numbers.setOnClickListener {
+            MyVariables.currentDisplayType = MyVariables.DisplayType.NUMBERS
+            colorButton2(numbers)
+        }
 
+        icons.setOnClickListener {
+            MyVariables.currentDisplayType = MyVariables.DisplayType.ICONS
+            colorButton2(icons)
+        }
 
     }
 

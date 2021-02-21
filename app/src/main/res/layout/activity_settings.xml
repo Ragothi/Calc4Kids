@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="?attr/fullscreenBackgroundColor"
     android:theme="@style/ThemeOverlay.Calc4Kids.FullscreenContainer"
-    tools:context=".MultiplicationActivity">
+    tools:context=".SettingsActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,11 +16,45 @@
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/numbers"
+            android:textColor="@color/purple_500"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FF6D00"
+            app:layout_constraintBottom_toTopOf="@+id/instruction"
+            app:layout_constraintEnd_toStartOf="@id/icons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/hard" />
+
+        <Button
+            android:id="@+id/icons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/icons"
+            android:textColor="@color/purple_500"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FF6D00"
+            app:layout_constraintBottom_toTopOf="@+id/instruction"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/numbers"
+            app:layout_constraintTop_toBottomOf="@+id/hard" />
+
+        <Button
             android:id="@+id/easy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/easy"
             android:textColor="@color/purple_500"
@@ -36,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/advanced"
             android:textColor="@color/purple_500"
@@ -52,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/hard"
             android:textColor="@color/purple_500"

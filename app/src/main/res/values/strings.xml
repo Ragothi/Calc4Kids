@@ -17,5 +17,7 @@
     </string>
     <string name="voiceActivity">Listen</string>
     <string name="description1">Win or lose</string>
+    <string name="icons">Icons</string>
+    <string name="numbers">Numbers</string>
 
 </resources>
